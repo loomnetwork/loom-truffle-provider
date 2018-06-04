@@ -13,7 +13,7 @@
     "format": "prettier --write \"src/**/*.ts\""
   },
   "dependencies": {
-    "loom-js": "^1.4.4"
+    "loom-js": "^1.4.5"
   },
   "devDependencies": {
     "@types/google-protobuf": "^3.2.7",

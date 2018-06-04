@@ -428,9 +428,9 @@ keypather@^1.10.2:
   dependencies:
     "101" "^1.0.0"
 
-loom-js@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/loom-js/-/loom-js-1.4.4.tgz#9df5c44a11067c9176b75c048018759061171ea7"
+loom-js@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/loom-js/-/loom-js-1.4.5.tgz#f960c0e731f5e84e879a53f0999a941975c6d8fc"
   dependencies:
     crypto-browserify "^3.12.0"
     google-protobuf "^3.5.0"
