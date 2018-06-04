@@ -5,20 +5,19 @@
     "name": "Loom Network",
     "url": "https://loomx.io"
   },
-  "version": "1.0",
+  "version": "1.0.0",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\""
-  },
-  "dependencies": {
-    "loom-js": "^1.4.5"
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "@types/google-protobuf": "^3.2.7",
     "@types/node": "^10.0.3",
     "@types/retry": "^0.10.2",
+    "loom-js": "^1.4.5",
     "prettier": "1.12.1",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.12.0",
