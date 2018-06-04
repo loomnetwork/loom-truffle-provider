@@ -1,11 +1,16 @@
 import {
-  CryptoUtils, Client, LoomProvider, LocalAddress, NonceTxMiddleware, SignedTxMiddleware
+  CryptoUtils,
+  Client,
+  LoomProvider,
+  LocalAddress,
+  NonceTxMiddleware,
+  SignedTxMiddleware
 } from 'loom-js'
 
 class TruffleLoomProvider {
   private _engine: LoomProvider
 
-  constructor(chainId: string, writeUrl:string , readUrl: string, privateKey: string) {
+  constructor(chainId: string, writeUrl: string, readUrl: string, privateKey: string) {
     const _privateKey = CryptoUtils.B64ToUint8Array(privateKey)
     const publicKey = CryptoUtils.publicKeyFromPrivateKey(_privateKey)
     const client = new Client(chainId, writeUrl, readUrl)
@@ -24,7 +29,7 @@ class TruffleLoomProvider {
 
   sendAsync(payload: any, callback: Function) {
     // Required to kill connection and not hang the process
-    if (payload.method ===  'eth_uninstallFilter') {
+    if (payload.method === 'eth_uninstallFilter') {
       // Five seconds after uninstall filters
       setTimeout(() => this._engine.disconnect(), 5000)
     }

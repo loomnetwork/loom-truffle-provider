@@ -10,7 +10,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write \"*.js\""
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "dependencies": {
     "loom-js": "^1.4.4"
