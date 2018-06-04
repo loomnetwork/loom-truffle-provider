@@ -1,0 +1,10 @@
+# gitignore
+
+node_modules
+
+# Only apps should have lockfiles
+package-lock.json
+/dist/*
+loom.umd.js
+/.env.test
+/yarn-error.log
