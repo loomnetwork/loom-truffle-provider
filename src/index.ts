@@ -9,6 +9,7 @@ import {
 
 class TruffleLoomProvider {
   private _engine: LoomProvider
+  private _timerHandler: any
 
   constructor(chainId: string, writeUrl: string, readUrl: string, privateKey: string) {
     const _privateKey = CryptoUtils.B64ToUint8Array(privateKey)
@@ -30,8 +31,14 @@ class TruffleLoomProvider {
   sendAsync(payload: any, callback: Function) {
     // Required to kill connection and not hang the process
     if (payload.method === 'eth_uninstallFilter') {
+      if (this._timerHandler) {
+        clearTimeout(this._timerHandler)
+      }
+
       // Five seconds after uninstall filters
-      setTimeout(() => this._engine.disconnect(), 5000)
+      this._timerHandler = setTimeout(() => {
+        this._engine.disconnect()
+      }, 5000)
     }
 
     this._engine.sendAsync(payload, callback)
