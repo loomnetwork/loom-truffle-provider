@@ -18,7 +18,14 @@ Node >= 8
 
 ## Truffle
 
-Download and install [Truffle](https://github.com/trufflesuite/truffle)
+```
+npm install -g truffle@4.1.8
+```
+
+### Current limitations:
+
+* Because the newest version of Truffle changed how to handle the providers, the Loom Truffle Provider is supporting only the version @4.1.8 at moment (Which should be fixed to support newer versions of Truffle soon)
+* Only one account is available during the test and deploy, which is the account for the private key
 
 ## Description
 
