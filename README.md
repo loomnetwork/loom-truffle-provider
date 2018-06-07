@@ -26,11 +26,10 @@ npm install -g truffle@4.1.8
 
 * Loom Truffle Provider is currently compatible only with Truffle `v4.1.8`. Support for newer versions
   will be added soon.
-* Only one account is available for testing and deployment, the one associated with the private key.
 
 ## Description
 
-Loom Truffle Provider makes it possible to deploy smart contracts written in Solidity on a Loom
+Loom Truffle Provider makes it possible to deploy smart contracts written in Solidity and using Truffle Suite on a Loom
 DappChain. Here's an example Truffle configuration that uses the Loom Truffle Provider...
 
 ```javascript
@@ -48,19 +47,34 @@ const privateKey = readFileSync('./privateKey', 'utf-8')
 
 const loomTruffleProvider = new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey)
 
+// Create 10 extra accounts, useful for tests
+loomTruffleProvider.createExtraAccounts(10)
+
 module.exports = {
   networks: {
-    loomdappchain: {
-      provider: function() {
-        return loomTruffleProvider
-      }, network_id: '*'
+    loom_dapp_chain: {
+      provider: loomTruffleProvider,
+      network_id: '*'
     }
   }
 };
 ```
 
+### Accounts managed by LoomTruffleProvider
+
+In order to access accounts on `LoomTruffleProvider` you should use the function `getProviderEngine` which will return the `LoomProvider` giving access to properties `accountsAddrList` and `accounts`
+
+```Javascript
+const loomTruffleProvider = new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey)
+const loomProvider = loomTruffleProvider.getProviderEngine()
+
+console.log("Accounts list", loomProvider.accountsAddrList)
+console.log("Accounts and Private Keys", loomProvider.accounts)
+```
+
+
 ## Notes
 
 * Make sure a Loom DappChain node is running before executing any Truffle commands.
 * The Truffle `network` option must be set to `loomdapchain` when using the example configuration
-  above, e.g. `truffle deploy --network loomdappchain`.
+  above, e.g. `truffle deploy --network loom_dapp_chain`.
