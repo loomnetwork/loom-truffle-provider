@@ -24,6 +24,6 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "loom-js": "1.4.5"
+    "loom-js": "1.7.0"
   }
 }
