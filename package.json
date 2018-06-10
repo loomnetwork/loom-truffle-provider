@@ -1,11 +1,11 @@
 {
   "name": "loom-truffle-provider",
-  "description": "Adapter that allows Truffle Suite to communicate with Loom DappChain",
+  "description": "Adapter that allows Truffle Suite to communicate with Loom DAppChain",
   "author": {
     "name": "Loom Network",
     "url": "https://loomx.io"
   },
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "loom-js": "1.7.0"
+    "loom-js": "1.8.0"
   }
 }

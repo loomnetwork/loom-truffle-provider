@@ -1,4 +1,4 @@
-import { CryptoUtils, Client, LoomProvider } from 'loom-js'
+import { CryptoUtils, Client, LoomProvider, createJSONRPCClient } from 'loom-js'
 
 class TruffleLoomProvider {
   private _engine: LoomProvider
@@ -14,7 +14,9 @@ class TruffleLoomProvider {
    */
   constructor(chainId: string, writeUrl: string, readUrl: string, privateKey: string) {
     const _privateKey = CryptoUtils.B64ToUint8Array(privateKey)
-    const client = new Client(chainId, writeUrl, readUrl)
+    const writer = createJSONRPCClient({ protocols: [{ url: writeUrl }] })
+    const reader = createJSONRPCClient({ protocols: [{ url: readUrl }] })
+    const client = new Client(chainId, writer, reader)
 
     this._engine = new LoomProvider(client, _privateKey)
     this._engine.on('error', (err: any) => {
@@ -52,16 +54,6 @@ class TruffleLoomProvider {
    * @param callback Callback function (err, value) => ()
    */
   sendAsync(payload: any, callback: Function) {
-    // Required to kill connection and not hang the process
-    if (this._timerHandler) {
-      clearTimeout(this._timerHandler)
-    }
-
-    // Five seconds after uninstall filters
-    this._timerHandler = setTimeout(() => {
-      this._engine.disconnect()
-    }, 3000)
-
     this._engine.sendAsync(payload, callback)
   }
 
