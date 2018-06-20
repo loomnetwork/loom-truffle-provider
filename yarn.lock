@@ -451,12 +451,13 @@ keypather@^1.10.2:
   dependencies:
     "101" "^1.0.0"
 
-loom-js@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/loom-js/-/loom-js-1.8.0.tgz#4489f8d02fd37c9ac56d06d8e40adf9a64aeece3"
+loom-js@1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/loom-js/-/loom-js-1.9.0.tgz#03da8d95b869e8c62ddcfe3d37dc3d2eb1ca6931"
   dependencies:
     axios "^0.18.0"
     crypto-browserify "^3.12.0"
+    debug "^3.1.0"
     google-protobuf "^3.5.0"
     retry "^0.12.0"
     ripemd160 "^2.0.1"

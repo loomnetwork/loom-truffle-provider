@@ -1,3 +1,10 @@
+v0.3.0
+---
+
+1. Enhancements
+
+* Updated to `loom-js v1.9.0`
+
 v0.2.0
 ---
 
@@ -6,7 +13,7 @@ v0.2.0
 * Updated to `loom-js v1.8.0`
 * Added support for newer `Truffle Suite v4.1.11`
 * Better handling for `Truffle Suite` functions by `HTTP` communications
-* Disconnect timeout of `3 seconds` insn't necessary anymore
+* Disconnect timeout of `3 seconds` isn't necessary anymore
 
 v0.1.1
 ---
