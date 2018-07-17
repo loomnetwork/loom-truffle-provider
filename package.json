@@ -5,7 +5,7 @@
     "name": "Loom Network",
     "url": "https://loomx.io"
   },
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
   "scripts": {
@@ -14,9 +14,12 @@
     "prepublish": "yarn build"
   },
   "devDependencies": {
+    "@types/bn.js": "^4.11.1",
     "@types/google-protobuf": "^3.2.7",
     "@types/node": "^10.0.3",
     "@types/retry": "^0.10.2",
+    "@types/underscore": "^1.8.8",
+    "bn.js": "^4.11.8",
     "prettier": "1.12.1",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.12.0",
@@ -24,6 +27,6 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "loom-js": "1.9.0"
+    "loom-js": "^1.14.0"
   }
 }
