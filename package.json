@@ -5,6 +5,11 @@
     "name": "Loom Network",
     "url": "https://loomx.io"
   },
+  "keywords": [
+    "blockchain",
+    "dappchain",
+    "truffle"
+  ],
   "version": "0.5.0",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
