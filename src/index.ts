@@ -35,12 +35,12 @@ class TruffleLoomProvider {
   }
 
   /**
-   * Create extra accounts using mnemonic BIP-39
+   * Create extra accounts using a BIP-39 mnemonic.
    *
-   * Useful for create new accounts to running tests on Truffle
+   * This function is useful for creating additional accounts for Truffle tests.
    *
-   * @param mnemonic Mnemonic used to create accounts
-   * @param quantity How many accounts to be created
+   * @param mnemonic BIP-39 mnemonic.
+   * @param quantity Number of accounts to create.
    */
   createExtraAccountsFromMnemonic(mnemonic: string, quantity: number) {
     const seed = bip39.mnemonicToSeedHex(mnemonic)
