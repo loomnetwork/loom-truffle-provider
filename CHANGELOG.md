@@ -3,7 +3,7 @@ v0.6.0
 
 1. Enhancements
 
-* Updated to `loom-js v1.19.0`
+* Updated to `loom-js v1.20.0`
 * Added function `createExtraAccountsFromMnemonic(mnemonic:string, n:number)` which supports BIP-39 (mnemonic)
 
 v0.5.0
