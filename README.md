@@ -57,7 +57,8 @@ module.exports = {
 
 ### Accounts managed by LoomTruffleProvider
 
-In order to access accounts on `LoomTruffleProvider` you should use the function `getProviderEngine` which will return the `LoomProvider` giving access to properties `accountsAddrList` and `accounts`
+In order to access accounts on `LoomTruffleProvider` you should use the function `getProviderEngine`
+which will return the `LoomProvider` giving access to properties `accounts`.
 
 ```Javascript
 const loomTruffleProvider = new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey)
@@ -66,16 +67,19 @@ const loomProvider = loomTruffleProvider.getProviderEngine()
 console.log("Accounts and Private Keys", loomProvider.accounts)
 ```
 
-Another alternative to create accounts is to use `BIP-39 (mnemonic)` which will create extra accounts using the `mnemonic code`
+Another way to create extra accounts is to use a `BIP-39 mnemonic`, which will create extra accounts
+from a set of words.
 
 ```Javascript
 // Using the mnemonic code to create 10 accounts
 loomTruffleProvider.createExtraAccountsFromMnemonic("gravity top burden ship student car spell purchase hundred improve check genre", 10)
 ```
 
-Note that the account on index `0` is created from the key passed on the constructor of the `LoomTruffleProvider` the other accounts are generated from the `mnemonic code`
+Note that the account at index `0` is created from the key passed to the `LoomTruffleProvider` constructor,
+while the other accounts are created from the `mnemonic`.
 
 ## Notes
 
 * Make sure that the `Loom DappChain` node is running before executing any `Truffle` command.
-* The `Truffle` `network` option must be set to `loom_dapp_chain` when using the example configuration above, e.g. `truffle deploy --network loom_dapp_chain`.
+* The `Truffle` `network` option must be set to `loom_dapp_chain` when using the example configuration
+  above, e.g. `truffle deploy --network loom_dapp_chain`.
