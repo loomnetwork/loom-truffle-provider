@@ -1,8 +1,9 @@
+import bip39 from 'bip39'
+import { derivePath } from 'ed25519-hd-key'
 import { CryptoUtils, Client, LoomProvider, createJSONRPCClient } from 'loom-js'
 
 class TruffleLoomProvider {
   private _engine: LoomProvider
-  private _timerHandler: any
 
   /**
    * Constructs a new TruffleLoomProvider using LoomProvider to provide connection to Loom DAppChain.
@@ -31,6 +32,23 @@ class TruffleLoomProvider {
    */
   getProviderEngine(): LoomProvider {
     return this._engine
+  }
+
+  /**
+   * Create extra accounts using mnemonic BIP-39
+   *
+   * Useful for create new accounts to running tests on Truffle
+   *
+   * @param mnemonic Mnemonic used to create accounts
+   * @param quantity How many accounts to be created
+   */
+  createExtraAccountsFromMnemonic(mnemonic: string, quantity: number) {
+    const seed = bip39.mnemonicToSeedHex(mnemonic)
+    const privateKeys = Array.from(Array(quantity).keys()).map(index => {
+      const data = derivePath(`m/44'/148'/${index}'`, seed)
+      return CryptoUtils.generatePrivateKeyFromSeed(data.key)
+    })
+    this._engine.addAccounts(privateKeys)
   }
 
   /**
