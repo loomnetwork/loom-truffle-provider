@@ -63,9 +63,17 @@ In order to access accounts on `LoomTruffleProvider` you should use the function
 const loomTruffleProvider = new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey)
 const loomProvider = loomTruffleProvider.getProviderEngine()
 
-console.log("Accounts list", loomProvider.accountsAddrList)
 console.log("Accounts and Private Keys", loomProvider.accounts)
 ```
+
+Another alternative to create accounts is to use `BIP-39 (mnemonic)` which will create extra accounts using the `mnemonic code`
+
+```Javascript
+// Using the mnemonic code to create 10 accounts
+loomTruffleProvider.createExtraAccountsFromMnemonic("gravity top burden ship student car spell purchase hundred improve check genre", 10)
+```
+
+Note that the account on index `0` is created from the key passed on the constructor of the `LoomTruffleProvider` the other accounts are generated from the `mnemonic code`
 
 ## Notes
 
