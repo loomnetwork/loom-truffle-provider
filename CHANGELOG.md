@@ -1,3 +1,9 @@
+v0.7.0
+---
+1. Breaking Changes
+
+* LoomProvider now returns the DAppChain ChainID as the network ID.
+
 v0.6.0
 ---
 
