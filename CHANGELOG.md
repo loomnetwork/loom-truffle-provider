@@ -1,3 +1,10 @@
+v0.8.0
+---
+
+1. Enhancements
+
+* Updated to `loom-js v1.27.1`
+
 v0.7.0
 ---
 1. Breaking Changes
