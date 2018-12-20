@@ -1,3 +1,10 @@
+v0.10.0
+---
+
+1. Enhancements
+
+* Updated to `loom-js v1.37.1`
+
 v0.9.0
 ---
 
