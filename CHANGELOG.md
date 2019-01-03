@@ -4,6 +4,7 @@ v0.11.0
 1. Enhancements
 
 * Updated to `loom-js v1.38.0`
+* Better support for `truffle v5` thanks to `loom-js`
 
 v0.10.0
 ---
