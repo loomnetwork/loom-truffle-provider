@@ -3,7 +3,7 @@ v0.14.0
 
 1. Enhancements
 
-* Updated to `loom-js v1.70.0`
+* Updated to `loom-js v1.70.1`
 * Supports `/eth` endpoint as read url (Check loom-js for more information)
 
 v0.11.0
